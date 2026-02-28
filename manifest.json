@@ -1,0 +1,15 @@
+{
+  "name": "XYZ COMIC - El Juego",
+  "short_name": "XYZ COMIC",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "icons": [
+    {
+      "src": "images/logo_app.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
