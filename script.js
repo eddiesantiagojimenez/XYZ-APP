@@ -148,3 +148,26 @@ function cambiarCartaGenerica(idImagen, idLista, rutaImagen, nombre) {
     if (window.event) window.event.stopPropagation();
     console.log("Guerrero " + nombre + " posicionado en " + idImagen);
 }
+function reproducirInfoPersonaje() {
+    const cartaMostrada = document.getElementById('carta-mostrada');
+    
+    // Si no hay líder seleccionado, no hace nada
+    if (!cartaMostrada.src || cartaMostrada.style.display === "none") {
+        alert("¡Eddie, selecciona un líder primero para escuchar su historia!");
+        return;
+    }
+
+    // Extraemos el nombre del guerrero de la ruta de la imagen
+    let nombreGuerrero = cartaMostrada.src.split('/').pop().split('.')[0];
+    
+    // Creamos el objeto de audio apuntando a tu carpeta 'Audios'
+    let audioRuta = 'Audios/' + nombreGuerrero + '.mp3';
+    let sonido = new Audio(audioRuta);
+    
+    console.log("Intentando tocar: " + audioRuta);
+
+    // Lo reproducimos
+    sonido.play().catch(error => {
+        console.log("Error: Asegúrate de que el archivo " + nombreGuerrero + ".mp3 esté en la carpeta Audios.");
+    });
+}
